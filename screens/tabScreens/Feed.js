@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   StyleSheet,
   View,
+  Text,
 } from "react-native";
 import { tweets } from "../../data/tweets";
 import Tweet from "../../components/Tweet";
@@ -18,10 +19,20 @@ export const Feed = () => {
     navigation.setOptions({
       headerLeft: () => (
         <Pressable onPress={() => navigation.openDrawer()}>
-          <Image
-            source={require("../../assets/beto.jpeg")}
-            style={{ width: 40, height: 40, borderRadius: 100, marginLeft: 15 }}
-          />
+          <View style={styles.headerInner}>
+            <Image
+              source={require("../../assets/beto.jpeg")}
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: 100,
+                marginLeft: 15,
+                marginRight: 5,
+              }}
+            />
+
+            <Text style={{ fontWeight: "600" }}>TretyakBro</Text>
+          </View>
         </Pressable>
       ),
     });
@@ -60,6 +71,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#1DA1F2",
+  },
+  headerInner: {
+    flexDirection: "row",
+    alignItems: "center",
   },
   footer: {
     height: 40,
