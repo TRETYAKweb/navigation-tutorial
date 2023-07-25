@@ -8,7 +8,7 @@ export const TweetDetailScreen = () => {
   const navigate = useNavigation();
 
   useLayoutEffect(() => {
-    navigate.setOptions({ headerTitle: params.tweet.author });
+    navigate.setOptions({ headerTitle: params.tweet.author.name });
   }, []);
 
   return (
